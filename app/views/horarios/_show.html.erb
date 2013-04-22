@@ -1,0 +1,14 @@
+<%- model_class = Horario -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='curso'>
+  <p>id: <%= @horario.id %></p>
+  <p>dia: <%= @horario.dia %></p>
+  <p>hora: <%= @horario.hora %></p>
+  <p>aula: <%= @horario.aula %></p>
+  <p>materia: <%= @horario.materia.nombre %></p>
+  <p>instructor: <%= @horario.instructor.nombres %></p>
+  <p>curso: <%= @horario.curso.nombre %></p>
+</div>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="Es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+   <script type="text/javascript" src="js/bootstrap.js"></script>
+   <script type="text/javascript" src="js/examen.js"></script>
+  </head> 
+  <body>
+    <div class="span4 offset3">
+      <br><br><br><br><br>
+      <div class="well" onmouseover="style.borderColor='black';" onmouseout="style.borderColor='blue';">
+        <div class="hero-unit">
+          <center><h3>LOGIN</h3></center>
+          <form id="login" action="horarios" onsubmit="return passw()" >
+            <i class="icon-user"></i>
+            Usuario:
+            <input type="text" id="nombre" onFocus="vaciar(this)" placeholder="Geraldine Arenas S" required>
+            <br>
+            <i class="icon-lock"></i>
+            Clave:
+            <br>
+            <input id="pass1" type="password" onFocus="vaciar(this)" placeholder="Contraseña" required>
+            <input type="submit" class= "btn btn-info" value="ingresar"  />
+            <input type="reset" value="Limpiar" class="btn btn-warning">
+          </form>
+        </div>
+    </div>
+  </body> 
+</html>
+

@@ -1,0 +1,15 @@
+<tr class="success" id=<%= "curso_#{curso.id}" %>>
+  <td><%= curso.id %></td>
+  <td><%= curso.ficha %></td>
+  <td><%= curso.nombre %></td>
+  <td>
+    <%= link_to 'Mostrar', curso, :remote => true, :class => 'btn btn-default btn-info' %>
+    <%= link_to 'Editar', edit_curso_path(curso), :remote => true,
+        :class => 'btn btn-default btn-warning' %>
+    <%= link_to 'Eliminar', curso, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-default btn-danger' %>
+  </td>
+  <td><%= link_to 'Estudiantes', curso_estudiantes_path(curso)%></td>
+</tr>
+

@@ -1,0 +1,16 @@
+<%- model_class = Estudiante -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='curso'>
+  <p>id: <%= @estudiante.id %></p>
+  <p><%= image_tag @estudiante.imagen.url(:small) %></p>
+  <p>nombres: <%= @estudiante.nombres %></p>
+  <p>apellidos: <%= @estudiante.apellidos %></p>
+  <p>cedula: <%= @estudiante.cedula %></p>
+  <p>email: <%= @estudiante.email %></p>
+  <p>direccion: <%= @estudiante.direccion %></p>
+  <p>fch_ncto: <%= @estudiante.fch_ncto %></p>
+  <p>curso: <%= @estudiante.curso.nombre %></p>
+</div>

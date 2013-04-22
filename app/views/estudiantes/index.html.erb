@@ -1,0 +1,60 @@
+<br><br>
+<%- model_class = Estudiante -%>
+
+<br>
+ <h1>Estudiantes</h1>
+<br>
+
+<%= form_tag request.path,:method => 'get' do %>
+ <%= content_tag :label do %>
+ <h4>Nombre Estudiante: </h4>
+ <%= text_field_tag :search,params[:search] %>
+ <%= submit_tag "Consultar",:nombres => nil%>
+ <% end %>
+<% end %>
+
+<%= form_tag request.path, :method => 'get' do %>
+  <%= content_tag :label do %>
+     Numero Registros:
+    <%= text_field_tag :registro,params[:registro],:class =>'input-mini' %>
+   <% end %>
+<% end %>
+
+
+<p>
+ <h4>Total Estudiantes :<%= @estudiantes.total_entries%></h4>
+</p>
+
+<div class="well" onmouseover="style.borderColor='black';" onmouseout="style.borderColor='blue';">
+
+<table border="1" class="table table-hover table-condensed pretty">
+  <thead>
+    <tr>
+      <th><%= sortable "id" %></th>
+      <th><%= sortable "nombres" %> </th>
+      <th><%= sortable "apellidos" %></th>
+      <th><%= sortable "cedula" %></th>
+      <th><%= sortable "telefono" %></th>
+      <th><%= sortable "email" %></th>
+      <th><%= sortable "direccion" %></th>
+      <th><%= sortable "fch_ncto" %></th>
+      <th>Curso</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+   <%= render @estudiantes %>
+  </tbody>
+</table>
+
+<tr>
+  <td><%= link_to 'Nuevo Estudiante', new_curso_estudiante_path(@curso),:class =>'btn btn-primary' %></td>
+  <td><%= link_to 'Atras', cursos_path, :class => 'btn btn-default' %></td>
+</tr>
+
+</div>
+
+<div align="center">
+ <%= will_paginate @estudiantes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;'%>
+</div>
+

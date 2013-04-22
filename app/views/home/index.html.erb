@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>home</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <%= stylesheet_link_tag "application", :media => "all" %>
+        <%= javascript_include_tag "application" %>
+        <%= csrf_meta_tags %>
+        <%= yield(:head) %>
+    </head>
+    <body>
+        <br><br><br>
+        <div class="navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="#"> ****** APLICACIÓN ******</a>
+                <div class="span6 offset3">
+                    <div class="hero-unit">
+                    <br<<br><br>
+                    <h1><center>Bienvenidos</center></h1>
+                     <%= image_tag('images.jpg', :alt => '', :class => "img-circle"  ) %>
+                </div>
+            </div>
+        </div>
+            <div class="navbar">
+                <br>
+            <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Terminos</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Publicidad</a></li>
+                <li><a href="#">Empleos</a></li>
+            </ul>
+        </div>
+        <br>
+        <div align="center">
+            <b><p>Todos los Derechos Reservados 2013</p></b>
+        </div>
+    </body>
+</html>

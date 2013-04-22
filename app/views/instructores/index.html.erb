@@ -1,0 +1,55 @@
+<br><br>
+<%- model_class = Instructor -%>
+
+<br>
+ <h1>Instructor</h1>
+<br>
+
+<%= form_tag request.path, :method => 'get' do %>
+ <%= content_tag :label do %>
+  <h4>Nombre Instructor: </h4>
+ <%= text_field_tag :search, params[:search] %>
+ <%= submit_tag "Consultar", :name => nil %>
+ <% end %>
+<% end %>
+
+<%= form_tag request.path, :method => 'get' do %>
+  <%= content_tag :label do %>
+     Numero Registros:
+    <%= text_field_tag :registro, params[:registro], :class =>'input-mini' %>
+   <% end %>
+<% end %>
+
+<p>
+ <h4>Total Instructores : <%= @instructores.total_entries %></h4>
+</p>
+
+<div class="well" onmouseover="style.borderColor='black';" onmouseout="style.borderColor='blue';">
+
+<table border="1" class="table table-hover table-condensed pretty">
+ <thead>
+   <tr>
+     <th><%= sortable "id" %> </th>
+     <th><%= sortable "nombres" %></th>
+     <th><%= sortable "apellidos" %></th>
+     <th><%= sortable "cedula" %></th>
+     <th><%= sortable "email" %></th>
+     <th><%= sortable "direccion" %></th>
+     <th><%= sortable "telefono" %></th>
+     <th><%= sortable "fch_ncto" %></th>
+     <th>Materia</th>
+     <th>Acciones</th>
+   </tr>
+ </thead>
+ <tbody>
+   <%= render @instructores %>
+ </tbody>
+</table>
+
+  <%= link_to 'Nuevo Instructor', new_instructor_path, :class => 'btn btn-primary' %>
+
+</div>
+
+<div align="center">
+ <%= will_paginate @instructores, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
+</div>

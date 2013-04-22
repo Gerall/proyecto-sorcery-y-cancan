@@ -1,0 +1,49 @@
+<br><br>
+<%- model_class = Materia -%>
+
+<br>
+ <h1>Materias</h1>
+<br>
+
+
+<%= form_tag request.path, :method => 'get' do %>
+  <%= content_tag :label do %>
+
+    <h5>Nombre Materia: </h5>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Consultar", :nombre => nil %><br>
+  <% end %>
+<% end %>
+
+<%= form_tag request.path, :method => 'get' do %>
+  <%= content_tag :label do %>
+     Numero Registros:
+    <%= text_field_tag :registro, params[:registro], :class =>'input-mini' %>
+   <% end %>
+<% end %>
+
+<p>
+ <h4>Total Materias : <%= @materias.total_entries %></h4>
+</p>
+
+<div class="well" onmouseover="style.borderColor='black';" onmouseout="style.borderColor='blue';">
+
+  <table border="1" class="table table-hover table-condensed pretty">
+    <thead>
+      <tr>
+        <th><%= sortable "id" %></th>
+        <th><%= sortable "nombre" %><th> 
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @materias %>
+    </tbody>
+  </table>
+  <tr>
+    <td><%= link_to 'Nuevo Materia', new_materia_path,:class => 'btn btn-primary', :remote => true %></td>
+  </tr>
+</div>
+
+<div align="center">
+ <%= will_paginate @materias, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
+</div>

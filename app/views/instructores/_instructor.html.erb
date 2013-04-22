@@ -1,0 +1,21 @@
+<tr class="success" id=<%= "instructor_#{instructor.id}" %>>
+  
+  <td><%= instructor.id %></td>
+  <td><%= image_tag instructor.imagen.url(:lsmall) %> <%= instructor.nombres %></td>
+  <td><%= instructor.apellidos %></td>
+  <td><%= instructor.cedula %></td>
+  <td><%= instructor.email%></td>
+  <td><%= instructor.direccion %></td>
+  <td><%= instructor.telefono %></td>
+  <td><%= instructor.fch_nacimiento %></td>
+  <td><%= instructor.materia.nombre %></td>
+  <td>
+    
+    <%= link_to 'Mostrar', instructor, :remote => true, :class => 'btn btn-default btn-info' %>
+    <%= link_to 'Editar', edit_instructor_path(instructor), :remote => true,
+        :class => 'btn btn-default btn-warning' %>
+    <%= link_to 'Eliminar', instructor, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-default btn-danger' %>
+  </td>
+</tr>

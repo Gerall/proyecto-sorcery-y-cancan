@@ -1,0 +1,54 @@
+<br><br>
+<%- model_class = Horario -%>
+
+<br>
+ <h1>Horario</h1>
+<br>
+
+<%= form_tag request.path, :method => 'get' do %>
+ <%= content_tag :label do %>
+  <h4>Horario: </h4>
+ <%= text_field_tag :search, params[:search] %>
+ <%= submit_tag "Consultar", :aula => nil %>
+ <% end %>
+<% end %>
+
+<%= form_tag request.path, :method => 'get' do %>
+  <%= content_tag :label do %>
+     Numero Registros:
+    <%= text_field_tag :registro, params[:registro], :class =>'input-mini' %>
+   <% end %>
+<% end %>
+
+<p>
+ <h4>Horarios : <%= @horarios.total_entries %></h4>
+</p>
+
+<div class="well" onmouseover="style.borderColor='black';" onmouseout="style.borderColor='blue';">
+
+  <table border="2" class="table table-hover table-condensed pretty ">
+   <thead>
+      <tr>
+        <th><%= sortable "id" %></th>
+        <th><%= sortable "dia" %></th>
+        <th><%= sortable "hora" %></th>
+        <th><%= sortable "aula" %></th>
+        <th> materia  </th>
+        <th> instructor </th>
+        <th> curso </th>
+        <th>Acciones</th>
+      </tr>
+   </thead>
+    <tbody>
+       <%= render @horarios %>
+    </tbody>
+  </table>
+  <tr>
+    <td><%= link_to 'Nuevo Horario', new_horario_path, :class =>'btn btn-primary', :remote => true %></td>
+  </tr>
+</div>
+
+<div align="center">
+ <%= will_paginate @horarios, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
+</div>
+

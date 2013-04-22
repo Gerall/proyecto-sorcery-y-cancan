@@ -1,0 +1,23 @@
+<%= simple_form_for([@curso,@estudiante], :html => {:multipart => true, :class => 'form-horizontal' }) do |f| %>
+
+  <%= f.error_notification %>
+  <%= image_tag @estudiante.imagen.url(:small) %>
+  <%= f.label :Foto    %>
+  <%= f.file_field :imagen %>
+  <%= f.input :nombres, :label => "Nombres",  :required => true %>
+  <%= f.input :apellidos, :label => "Apellidos",  :required => true %>
+  <%= f.input :cedula, :label => "Cedula",  :required => true %>
+  <%= f.input :telefono, :label => "Telefono",  :required => true %>
+  <%= f.input :email, :label => "Email",  :required => true %>
+  <%= f.input :direccion, :label => "Direcion",  :required => true %>
+  <%= f.input :fch_ncto, as: :date, start_year: Date.today.year - 50, end_year: Date.today.year - 10, accept_day: true, order: [:day, :month, :year] %>
+
+
+  <%= f.label :curso_id %>
+  <%= f.collection_select :curso_id, Curso.all, :id, :nombre, prompt: "Seleccione un Curso"%><br>
+  
+  <div class="form-actions">
+    <%= f.submit "Guardar", :class => 'btn btn-primary' %>
+    <%= link_to 'Atras', curso_estudiantes_path, :class => 'btn btn-default' %>
+  </div>
+<% end %>

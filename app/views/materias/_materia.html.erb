@@ -1,0 +1,12 @@
+<tr class="success" id=<%= "materia_#{materia.id}" %>>
+  <td><%= materia.id %></td>
+  <td><%= materia.nombre %></td>
+  <td>
+    <%= link_to 'Mostrar', materia, :remote => true, :class => 'btn btn-default btn-info' %>
+    <%= link_to 'Editar', edit_materia_path(materia), :remote => true,
+        :class => 'btn btn-default btn-warning' %>
+    <%= link_to 'Eliminar', materia, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-default btn-danger' %>
+  </td>
+</tr>
