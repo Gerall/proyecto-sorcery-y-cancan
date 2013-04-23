@@ -41,7 +41,7 @@ class InstructoresController < ApplicationController
         respond_to do |format|
           if @instructor.save
             format.html { redirect_to instructores_path, notice: 'Instructor creado.' }
-            format.json { render json: @persona, status: :created, location: @instructor }
+            format.json { render json: @instructor, status: :created, location: @instructor }
           else
             format.html { render action: "new" }
             format.json { render json: @instructor.errors, status: :unprocessable_entity }
