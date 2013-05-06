@@ -29,6 +29,11 @@ gem 'will_paginate'
 gem 'lazybox'
 gem 'prawn'
 gem 'paperclip'
+gem 'sorcery'
+gem "bcrypt-ruby", :require => "bcrypt" 
+gem "cancan"
+gem "rolify"
+
 
 
 # To use ActiveModel has_secure_password
