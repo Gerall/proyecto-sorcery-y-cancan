@@ -11,11 +11,11 @@
   <td><%= instructor.materia.nombre %></td>
   <td>
     
-    <%= link_to 'Mostrar', instructor, :remote => true, :class => 'btn btn-default btn-info' %>
+    <%= link_to 'Mostrar', instructor, :remote => true, :class => 'btn btn-mini btn-info' %>
     <%= link_to 'Editar', edit_instructor_path(instructor), :remote => true,
-        :class => 'btn btn-default btn-warning' %>
+        :class => 'btn btn-mini btn-warning' %>
     <%= link_to 'Eliminar', instructor, 
         :data => { :confirm => 'Esta Seguro?' },
-        :method => :delete, :remote => true, :class => 'btn btn-default btn-danger' %>
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
   </td>
 </tr>

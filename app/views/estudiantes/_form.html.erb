@@ -1,4 +1,4 @@
-<%= simple_form_for([@curso,@estudiante], :html => {:multipart => true, :class => 'form-horizontal' }) do |f| %>
+<%= simple_form_for([@curso,@estudiante], :html => {:multipart => true, :class => 'form-horizontal' }, :remote => true) do |f| %>
 
   <%= f.error_notification %>
   <%= image_tag @estudiante.imagen.url(:small) %>

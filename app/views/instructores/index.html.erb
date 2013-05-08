@@ -23,31 +23,30 @@
 </p>
 
 <div class="well" onmouseover="style.borderColor='black';" onmouseout="style.borderColor='blue';">
+  <table border="1" class="table table-hover table-condensed pretty">
+   <thead>
+     <tr>
+       <th><%= sortable "id" %> </th>
+       <th><%= sortable "nombres" %></th>
+       <th><%= sortable "apellidos" %></th>
+       <th><%= sortable "cedula" %></th>
+       <th><%= sortable "email" %></th>
+       <th><%= sortable "direccion" %></th>
+       <th><%= sortable "telefono" %></th>
+       <th><%= sortable "fch_ncto" %></th>
+       <th><%= sortable "materia_id" %></th>
+       <th>Acciones</th>
+     </tr>
+   </thead>
+   <tbody>
+     <%= render @instructores %>
+   </tbody>
+  </table>
 
-<table border="1" class="table table-hover table-condensed pretty">
- <thead>
-   <tr>
-     <th><%= sortable "id" %> </th>
-     <th><%= sortable "nombres" %></th>
-     <th><%= sortable "apellidos" %></th>
-     <th><%= sortable "cedula" %></th>
-     <th><%= sortable "email" %></th>
-     <th><%= sortable "direccion" %></th>
-     <th><%= sortable "telefono" %></th>
-     <th><%= sortable "fch_ncto" %></th>
-     <th><%= sortable "materia_id" %></th>
-     <th>Acciones</th>
-   </tr>
- </thead>
- <tbody>
-   <%= render @instructores %>
- </tbody>
-</table>
+    <%= link_to 'Nuevo Instructor', new_instructor_path, :remote => true, :class => 'btn btn-primary' %>
 
-  <%= link_to 'Nuevo Instructor', new_instructor_path, :remote => true, :class => 'btn btn-primary' %>
+  </div>
 
-</div>
-
-<div align="center">
- <%= will_paginate @instructores, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
+  <div align="center">
+   <%= will_paginate @instructores, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
 </div>

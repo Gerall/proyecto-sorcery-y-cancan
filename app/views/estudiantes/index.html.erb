@@ -22,7 +22,7 @@
 
 
 <p>
- <h4>Total Estudiantes :<%= @estudiantes.total_entries%></h4>
+ <h4>Total Estudiantes: <input type="text" id="totalregs" class="span1" value="<%= @estudiantes.total_entries %>"readonly /></h4>
 </p>
 
 <div class="well" onmouseover="style.borderColor='black';" onmouseout="style.borderColor='blue';">
@@ -48,7 +48,7 @@
 </table>
 
 <tr>
-  <td><%= link_to 'Nuevo Estudiante', new_curso_estudiante_path(@curso),:class =>'btn btn-primary' %></td>
+  <td><%= link_to 'Nuevo Estudiante', new_curso_estudiante_path(@curso),:remote => true, :class =>'btn btn-primary' %></td>
   <td><%= link_to 'Atras', cursos_path, :class => 'btn btn-default' %></td>
 </tr>
 

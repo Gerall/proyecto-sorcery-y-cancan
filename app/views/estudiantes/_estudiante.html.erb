@@ -10,11 +10,11 @@
   <td><%= estudiante.fch_ncto %></td>
   <td><%= estudiante.curso.nombre %></td>
   <td>
-    <%= link_to 'Mostrar', curso_estudiante_path(@curso,estudiante), :remote =>true, :class => 'btn btn-default btn-info' %>
+    <%= link_to 'Mostrar', curso_estudiante_path(@curso,estudiante), :remote =>true, :class => 'btn btn-mini btn-info' %>
     <%= link_to 'Editar', edit_curso_estudiante_path(@curso,estudiante), :remote => true,
-        :class => 'btn btn-default btn-warning' %>
+        :class => 'btn btn-mini btn-warning' %>
     <%= link_to 'Eliminar', curso_estudiante_path(@curso,estudiante), 
         :data => { :confirm => 'Esta Seguro?' },
-        :method => :delete, :remote => true, :class => 'btn btn-default btn-danger' %>
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
   </td>
 </tr>

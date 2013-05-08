@@ -40,6 +40,8 @@ class EstudiantesController < ApplicationController
   
   def create
     @estudiante = @curso.estudiantes.build(params[:estudiante])
+    render :action => :new unless @estudiante.save
+    @estudiantes = Estudiante.all
   end
 
 
@@ -52,6 +54,7 @@ class EstudiantesController < ApplicationController
   def destroy
     @estudiante = Estudiante.find(params[:id])
     @estudiante.destroy
+    @estudiantes = Estudiante.all
   end
 
   private 
