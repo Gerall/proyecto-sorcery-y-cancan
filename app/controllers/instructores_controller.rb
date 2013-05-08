@@ -36,16 +36,8 @@ class InstructoresController < ApplicationController
 
     def create
         @instructor = Instructor.new(params[:instructor])
-
-        respond_to do |format|
-          if @instructor.save
-            format.html { redirect_to instructores_path, notice: 'Instructor creado.' }
-            format.json { render json: @instructor, status: :created, location: @instructor }
-          else
-            format.html { render action: "new" }
-            format.json { render json: @instructor.errors, status: :unprocessable_entity }
-          end
-        end
+        render :action => :new unless @instructor.save
+        @instructores = Instructor.all
     end
 
     
@@ -58,6 +50,7 @@ class InstructoresController < ApplicationController
     def destroy
         @instructor = Instructor.find(params[:id])
         @instructor.destroy
+        @instructores = Instructor.all
     end
  
     private

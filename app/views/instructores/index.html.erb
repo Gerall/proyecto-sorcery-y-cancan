@@ -19,7 +19,7 @@
 <% end %>
 
 <p>
- <h4>Total Instructores : <%= @instructores.total_entries %></h4>
+ <h4>Total Instructores: <input type="text" id="totalregs" class="span1" value="<%= @instructores.total_entries %>"readonly /></h4>
 </p>
 
 <div class="well" onmouseover="style.borderColor='black';" onmouseout="style.borderColor='blue';">
@@ -44,7 +44,7 @@
  </tbody>
 </table>
 
-  <%= link_to 'Nuevo Instructor', new_instructor_path, :class => 'btn btn-primary' %>
+  <%= link_to 'Nuevo Instructor', new_instructor_path, :remote => true, :class => 'btn btn-primary' %>
 
 </div>
 

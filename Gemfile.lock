@@ -128,6 +128,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.4)
+    remotipart (1.0.5)
     rolify (3.2.0)
     ruby-rc4 (0.1.5)
     sass (3.2.7)
@@ -182,6 +183,7 @@ DEPENDENCIES
   pg
   prawn
   rails (= 3.2.12)
+  remotipart
   rolify
   sass-rails (~> 3.2.3)
   simple_form
