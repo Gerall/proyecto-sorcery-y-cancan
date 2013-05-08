@@ -2,6 +2,8 @@ class HorariosController < ApplicationController
 
   before_filter :require_login
 
+  load_and_authorize_resource :only => [:new, :edit, :destroy] 
+
   helper_method :sort_column, :sort_direction
 
   def index
@@ -22,20 +24,18 @@ class HorariosController < ApplicationController
   def show
     @horario = Horario.find(params[:id])
 
-    respond_to do |format|
-
+    if params[:format] == "pdf"
+      #respond_to do |format|
       #format.html # show.html.erb
-      format.json { render json: @horario }
-
-      format.pdf do
-        pdf = HorarioPdf.new(@horario, view_context)
-        send_data pdf.render, filename:
-        "Horario_#{@horario.aula}.pdf",
-        type: "application/pdf"
-      end
+      #format.json { render json: @horario }
+      #format.pdf do
+      pdf = HorarioPdf.new(@horario, view_context)
+      send_data pdf.render, filename:
+      "Horario_#{@horario.id}.pdf",type: "application/pdf"
+      #end
     end
   end
-
+  
   
   def new
     @horario = Horario.new

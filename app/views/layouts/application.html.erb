@@ -17,10 +17,12 @@
 			<nav class="navbar-inner">
 				<div class="container">
 					<%= render 'layouts/navigation' %>
-					<% if current_user %>
-				        Logged in as <%= current_user.email %>.
-				        <%= link_to "Log out", logout_path %>
-				    <% end %>
+					<div id="span">
+						<% if current_user %>
+					        Sesion de: <%= current_user.username %>
+					        <%= link_to "Salir", logout_path %>
+					    <% end %>
+				    </div>
 				</div>
 			</nav>
 		</header>

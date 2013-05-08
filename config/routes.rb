@@ -6,30 +6,6 @@ Guia3::Application.routes.draw do
 
   get "signup" => "users#new", :as => "signup"
 
-  get "sessions/new"
-
-  get "sessions/create"
-
-  get "sessions/destroy"
-
-  get "users/index"
-
-  get "users/show"
-
-  get "users/new"
-
-  get "users/create"
-
-  get "users/edit"
-
-  get "users/update"
-
-  get "users/destroy"
-
-  get "login/index"
-
-  get "home/index"
-  
   resources :users
 
   resources :sessions
@@ -44,11 +20,11 @@ Guia3::Application.routes.draw do
     resources :estudiantes
   end
 
-  #resources :home
 
   resources :login
-
-  #root :to => "users#index"
+  
+  root :to => 'home#index'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -99,7 +75,6 @@ Guia3::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

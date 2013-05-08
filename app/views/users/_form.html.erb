@@ -1,0 +1,29 @@
+<%= simple_form_for(@user, :html => {:multipart => true, :class => 'form-horizontal' }) do |f| %>
+
+  <%= f.error_notification %>
+
+  <div class="hero-unit span3 " >
+    <div class="field">
+      <%= f.label :nombre_de_usuario %>
+      <%= f.text_field :username %>
+      <br>
+    </div>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      <br>
+    </div>
+    <div class="field">
+      <%= f.label :Clave %>
+      <%= f.password_field :password %>
+        <br>
+    </div>
+    <div class="field">
+      <%= f.label :Confirmar_Clave %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <br>
+    <div class="actions"><%= f.submit :class=>"btn btn-success btn-default" %>
+    <%= link_to 'Atras', users_path, :class=>"btn btn-info btn-default"%></div>  
+  </div>
+<% end %>

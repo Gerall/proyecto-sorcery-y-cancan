@@ -2,6 +2,8 @@ class InstructoresController < ApplicationController
 
     before_filter :require_login
 
+    load_and_authorize_resource :only => [:new, :edit, :destroy] 
+
     helper_method :sort_column, :sort_direction
 
     def index
@@ -26,11 +28,6 @@ class InstructoresController < ApplicationController
 
     def new
         @instructor = Instructor.new
-
-        respond_to do |format|
-            format.html # show.html.erb
-            format.json { render json: @instructor }
-        end
     end
 
     def edit

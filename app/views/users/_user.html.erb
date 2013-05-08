@@ -1,0 +1,13 @@
+<tr class="success" id=<%= "user_#{user.id}" %>>
+  <td><%= user.username %></td>
+  <td><%= user.email %></td>
+  <td><%= user.roles_name %></td>
+  <td>
+    <%= link_to 'Mostrar', user, :remote => true, :class => 'btn btn-default btn-info' %>
+    <%= link_to 'Editar', edit_user_path(user), :remote => true,
+        :class => 'btn btn-default btn-warning' %>
+    <%= link_to 'Eliminar', user, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-default btn-danger' %>
+  </td>
+</tr>

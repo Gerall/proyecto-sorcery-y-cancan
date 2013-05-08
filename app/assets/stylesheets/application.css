@@ -71,3 +71,11 @@
 .pretty th .desc {
   background-image: url('down-arrow.gif');
 }
+
+/* boton de salir */
+#span{
+  width: 400px;
+  padding-left: 90%;
+  margin-top: 1%;
+  
+}
